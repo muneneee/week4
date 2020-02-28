@@ -59,14 +59,19 @@ nav ul li{
 nav ul li a{
     color: white;
     font-size: 17px;
-    
+    padding: 7px 13px;
+    border-radius: 3px;
+}
+a.active,a:hover{
+    background: pink;
+    transition: .5s;
 }
 
 #section1 {
     background-image: url('../img/pizza2.jpg');
     background-size: cover;
     background-position: center;
-    height: 100vh;
+    height: 150vh;
     padding-top: 10px;
 }
 #section1 h1 {
