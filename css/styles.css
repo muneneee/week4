@@ -1,6 +1,8 @@
 body{
     margin: 0;
 }
+
+//landing page
 #showcase{
     background-image: url('../img/pizza3.jpg');
     background-size: cover;
@@ -17,7 +19,6 @@ body{
     width: 250px;
     height: 300px;
 }
-
 #showcase h1{
     font-size: 80px;
     font-family: 'Bangers', serif;
@@ -26,5 +27,9 @@ body{
 #showcase p{
     font-size: 30px;
     font-family: 'Bangers', serif;
-    color:#D4AC0D ;
+    color:#616A6B ;
 }
+
+//second page
+
+
