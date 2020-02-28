@@ -29,7 +29,38 @@ body{
     font-family: 'Bangers', serif;
     color:#82E0AA ;
 }
-
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    box-sizing: border-box;
+}
+nav{
+    background: rgb(182, 105, 34);
+    height: 80px;
+    width: 100%;
+}
+label.logo{
+    color: #82E0AA;
+    font-size: 35px;
+    line-height: 80px;
+    padding: 0 100px;
+    font-weight: bold;
+}
+nav ul{
+    float: right;
+    margin-right: 20px;
+}
+nav ul li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+}
+nav ul li a{
+    color: white;
+    font-size: 17px;
+    
+}
 
 #section1 {
     background-image: url('../img/pizza2.jpg');
@@ -56,3 +87,4 @@ body{
     font-family: 'Bangers', serif;
     color:#82E0AA;
 }
+
