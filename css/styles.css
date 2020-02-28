@@ -2,7 +2,7 @@ body{
     margin: 0;
 }
 
-//landing page
+
 #showcase{
     background-image: url('../img/pizza3.jpg');
     background-size: cover;
@@ -27,9 +27,26 @@ body{
 #showcase p{
     font-size: 30px;
     font-family: 'Bangers', serif;
-    color:#616A6B ;
+    color:#82E0AA ;
 }
 
-//second page
 
-
+#section1 {
+    background-image: url('../img/pizza2.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    padding-top: 10px;
+}
+#section1 h1 {
+    text-align: center;
+    font-size: 70px;
+    font-family: 'Bangers', serif;
+    color:#82E0AA;
+}
+#section1 p{
+    text-align: center;
+    font-size: 30px;
+    font-family: 'Bangers', serif;
+    color:#82E0AA;
+}
