@@ -19,7 +19,7 @@
                 </label>
                 <label class="logo">Menu</label>
                 <ul>
-                    <li><a class="active" href="#home"></a></li>
+                    <li><a class="active" href="#showcase">Home</a></li>
                     <li><a href="#about">About us</a></li>
                     <li><a href="#location">Our locations</a></li>
                     <li><a href="#order">Order online</a></li>
@@ -48,7 +48,28 @@
             </div>
         </section>
         <section id="section2">
-            <h1 id="order">ORDER ONLINE</h1>
+            <div class="container-fluid">
+                <form>
+                    <h1 id="order">ORDER ONLINE</h1>
+                        <h2>Size</h2>
+                            <select id="size">
+                                <option value="small">Small</option>
+                                <option value="medium">medium</option>
+                                <option value="large">large</option>
+                                <option value="mega">mega</option>
+                            </select>
+                        <h2>Crust</h2>
+                            <input type="radio" name="crust1" value="cripsy">Crispy<br>
+                            <input type="radio" name="crust2" value="stuffed">Stuffed<br>
+                            <input type="radio" name="crust3" value="gluten-free">Gluten free<br>
+                        <h2>Toppings</h2>
+                            <input type="checkbox" name="top1" value="pepperoni">Pepperoni<br>
+                            <input type="checkbox" name="top2" value="mushrooms">Mushrooms<br>
+                            <input type="checkbox" name="top3" value="onions">Onions<br>
+                            <input type="checkbox" name="top4" value="sausage">Sausage<br>
+                            <input type="checkbox" name="top5" value="cheese">Cheese<br>
+                </form>
+            </div>
         </section>
     </body>
 </html>
