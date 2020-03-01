@@ -51,5 +51,21 @@ $(document).ready(function() {
            }
         }
     ];
-    
+    var crustPrice = {
+        crispy: 100,
+        stuffed: 120,
+        glutenfree: 100
+    };
+
+    function sizecalc(size) {
+        if (size === "small"){
+            return sizePrice.small * 1;
+        }else if(size === "medium") {
+            return sizePrice.medium*1;
+        }else if {size === "large") {
+            return sizePrice.large * 1;
+        } else {
+            return sizePrice.mega * 1;
+        }
+    }
 });
