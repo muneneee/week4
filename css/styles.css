@@ -74,9 +74,9 @@ body{
   .checkbtn{
     font-size: 30px;
     color: white;
-    float: right;
-    line-height: 80px;
-    margin-right: 40px;
+    float: left;
+    line-height: 180px;
+    margin-right: 140px;
     cursor: pointer;
     display: none;
   }
@@ -121,11 +121,6 @@ body{
     #check:checked ~ ul{
       left: 0;
     }
-  }
-  section{
-    background: url(bg1.jpg) no-repeat;
-    background-size: cover;
-    height: calc(100vh - 80px);
   }
   
 
