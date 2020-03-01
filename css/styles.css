@@ -150,3 +150,18 @@ body{
     color:#82E0AA;
 }
 
+@media only screen and (max-width: 1250px) {
+    #showcase {
+      height: 200vh;
+    }
+    #section1 {
+        height: 290vh;
+    }
+    #jumbo {
+        height: 190vh;
+    }
+    #list {
+        height: 190vh;
+    }
+  }
+
