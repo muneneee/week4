@@ -68,4 +68,44 @@ $(document).ready(function() {
             return sizePrice.mega * 1;
         }
     }
+
+    function crustcalc(crust) {
+        if (crust === "crispy"){
+            return crustPrice.crispy * 1;
+        }else if(crust === "stuffed") {
+            return crustPrice.stuffed * 1;
+        } else {
+            return crustPrice.glutenfree * 1;
+        }
+
+    function toppingscalc(toppings) {
+       var noOfTopping = 0;
+       for (i = 0; i < toppings.length; i++ ){
+            if(toppings[i] == "pepperoni"){
+                noOfTopping += 50;
+            }
+            if (toppings[i] == "mushrooms"){
+                noOfTopping += 50;
+            }
+            if (toppings[i] == "onions"){
+                noOfTopping += 50;
+            }
+            if (toppings[i] == "sausage"){
+                noOfTopping += 50;
+            }
+            if (toppings[i] == "cheese"){
+                noOfTopping += 50;
+            }
+        }
+       return noOfTopping * 1;
+    }
+
+    function checkPepperoni(topping){
+        return topping === "pepperoni";
+    }
+
+    function getPizzaSize(){
+        return $("#size")
+    }
+
 });
