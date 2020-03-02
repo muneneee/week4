@@ -106,6 +106,38 @@ $(document).ready(function() {
 
     function getPizzaSize(){
         return $("#size")
+            .find(":selected")
+            .val()
     }
+
+    function getCrust() {
+        return $("#crust")
+            .find(":selected")
+            .val()
+    }
+
+    function getToppings() {
+        var toppingList = [];
+        $(".toppings :checked").each(function() {
+            toppingList.push($(this).val());
+        });
+        return toppingList;
+    }
+
+    $("form#myform").submit(function(event){
+        event.preventDefault();
+        var pizzaSize = getPizzaSize();
+        var crust = getCrust();
+        var toppingList = getToppings();
+
+        var newPizza = new pizza(pizzaSize, crust);
+        newPizza.toppings.push(toppingList);
+        var oneOrder =
+            sizecalc(pizzaSize)+
+            crustcalc(crust)+
+            toppingscalc(toppingList);
+           
+        
+    })
 
 });
