@@ -83,7 +83,34 @@
                           data-target="#exampleModalCenter"
                           id="gettotal"
                         >Checkout</button>
+                      </div>
+                      <div class="card-body">
+                        <table id="table">
+                            <tr>
+                            <td>Size</td>
+                            <td>Crust</td>
+                            <td>Toppings</td>
+                            <td>Total Price</td>
+                            </tr>
+                        </table>
+                      </div>
             </div>
         </section>
+        <div class="modal-body">
+            <p>
+              Amount you are to pay for your order is ksh
+              <span id="money" style="color: red"></span>
+            </p>
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              id="myModel"
+              data-dismiss="modal"
+            >
+              Confirm checkout
+            </button>
+        </div>
     </body>
 </html>
