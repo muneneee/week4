@@ -176,3 +176,21 @@ body{
     opacity: 65%;
     font-family: 'Bangers', serif;
 }
+#pizzaDetails{
+  display: none;
+  cursor: pointer;
+  text-decoration: underline;
+  color: aqua;
+}
+#pizzaDetail{
+  display: none;
+}
+#deliver{
+  display: none;
+}
+#pickup{
+  display: none;
+}
+#checkout{
+  display: none;
+}

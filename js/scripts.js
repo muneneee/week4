@@ -85,7 +85,7 @@ $("button#pickup").click(function(event){
 })
 $("button#checkout").click(function(event){
    event.preventDefault();
-   var check = TotalPrice + del;
+   var check = TotalPrice + 400;
    $("#check").text(check);
    // console.log(check);
 });
