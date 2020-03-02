@@ -1,12 +1,12 @@
 var del = 400;
 var PizzatotalPrice = [];
 function Order (size, crust) {
- this.size = size;
+ this.pizzaSize = size;
  this.crust = crust;
- this.Topping1 = 950;
- this.Topping2 = 950;
+ this.Topping1 = 150;
+ this.Topping2 = 150;
  this.pizzaPrice = 0;
- this.pizzaNumber  = 1;
+ this.pizzaNumber  = $("#pizzanum").val();
  this.pizzaNumbers = [];
 }
 Order.prototype.pizzaCost = function () {
@@ -63,7 +63,7 @@ $(document).ready(function() {
    $("#pizzaDetails").show();
    $("#totalPizzaCost").text(newPizzaOrder.finalCost());
    $("#pizzaDetail").append("<p>" + pizzaDetails + "</p>");
-   $("#size, #crust, #Topping1, #Topping2, #pizza-number").val("");
+   $("#size, #crust, #Topping1, #Topping2, #pizzanum").val("");
  });
  $("#pizzaDetails").click(function() {
    $("#pizzaDetail").toggle();
@@ -85,7 +85,7 @@ $("button#pickup").click(function(event){
 })
 $("button#checkout").click(function(event){
    event.preventDefault();
-   var check = TotalPrice + 400;
+   alert( TotalPrice + 400);
    $("#check").text(check);
    // console.log(check);
 });
