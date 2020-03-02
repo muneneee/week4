@@ -3,8 +3,8 @@ var PizzatotalPrice = [];
 function Order (size, crust) {
  this.size = size;
  this.crust = crust;
- this.Topping1 = 50;
- this.Topping2 = 50;
+ this.Topping1 = 950;
+ this.Topping2 = 950;
  this.pizzaPrice = 0;
  this.pizzaNumber  = 1;
  this.pizzaNumbers = [];
