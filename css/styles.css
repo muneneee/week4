@@ -122,7 +122,7 @@ body{
       left: 0;
     }
   }
-  
+
 
 #section1 {
     background-image: url('../img/pizza2.jpg');
@@ -167,7 +167,7 @@ body{
 
 #section2{
     background-image: url('../img/collage.jpg');
-    height: 100vh;
+    height: 130vh;
 }
 .container-fluid {
     justify-content: center;

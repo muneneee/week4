@@ -49,68 +49,68 @@
         </section><br>
         <section id="section2">
             <div class="container-fluid">
-                <form id="myform">
+                <form id="pizzaOrder" class="form-group">
                     <h1 id="order">ORDER ONLINE</h1>
                         <h2>Size</h2>
-                            <select id="size">
-                                <option value="small">Small - price=Ksh500</option>
-                                <option value="medium">medium -  price=Ksh800</option>
-                                <option value="large">large -  price=Ksh1200</option>
-                                <option value="mega">mega -  price=Ksh1500</option>
-                            </select>
+                          <div id="pizzaSize">
+                              <select id="size" class="form-control">
+                                  <option value="small">Small - price=Ksh500</option>
+                                  <option value="medium">medium -  price=Ksh800</option>
+                                  <option value="large">large -  price=Ksh1200</option>
+                              </select>
+                          </div><br>
                         <h2>Crust</h2>
-                            <select id="crust">
-                                <option  value="cripsy">Crispy - price=Ksh100</option>
-                                <option value="stuffed">Stuffed - price=Ksh120</option>
-                                <option value="glutenfree">Gluten free - price=Ksh100</option>
-                            </select>
+                          <div id="pizzaCrusts">
+                              <select id="crust">
+                                  <option  value="cripsy">Crispy - price=Ksh100</option>
+                                  <option value="stuffed">Stuffed - price=Ksh120</option>
+                                  <option value="glutenfree">Gluten free - price=Ksh100</option>
+                              </select>
+                          </div><br>
                         <h2>Toppings</h2>
-                            <input type="checkbox" name="top1" value="pepperoni">Pepperoni - price=Ksh50<br>
-                            <input type="checkbox" name="top2" value="mushrooms">Mushrooms - price=Ksh50<br>
-                            <input type="checkbox" name="top3" value="onions">Onions - price=Ksh50<br>
-                            <input type="checkbox" name="top4" value="sausage">Sausage - price=Ksh50<br>
-                            <input type="checkbox" name="top5" value="cheese">Cheese - price=Ksh50<br>
+                        <div id="pizzaTopping1">
+                          <label for="">Choose Pizza Topping1: </label>
+                          <select required class="form-control" id="Topping1">
+                            <option></option>
+                            <option value="Green">Green peper</option>
+                            <option value="Mushroom">Mushroom</option>
+                            <option value="Chicken">Cheese</option>
+                            <option value="Beef">Black Olive</option>
+                            <option value="Sausage"> Onions</option>
+                          </select>
+                        </div><br>
+                        <div id="pizzaTopping2">
+                          <label for="">Choose Pizza Topping2: </label>
+                          <select required class="form-control" id="Topping2">
+                            <option></option>
+                            <option value="Peparoni">peperoni</option>
+                            <option value="Sausage">tomatoes</option>
+                            <option value="Sausage">Bacon</option>
+                          </select>
+                        </div><br>
                         <h2>Number</h2>
-                            <input type="number" name="number" value="amount" required><br>
-                            <button type="submit" class="btn-success btn mt-3" id="orderbutton" >Order</button><br>
+                         <div class="pizzaNumber">
+                            <input type="number" class="form-control" id="pizza-number" min="1" required>
+                         </div><br>
+
+                         <button type="submit" class="btn btn-info" id="send">Order</button>
                 </form>
-                <div id="items"></div>
-                    <a href="#order-section">
-                      <div class="checkout">
-                        <button
-                          class="btn-success btn m-4"
-                          data-toggle="modal"
-                          data-target="#exampleModalCenter"
-                          id="gettotal"
-                        >Checkout</button>
-                      </div>
-                      <div class="card-body">
-                        <table id="table">
-                            <tr>
-                            <td>Size</td>
-                            <td>Crust</td>
-                            <td>Toppings</td>
-                            <td>Total Price</td>
-                            </tr>
-                        </table>
-                      </div>
+                <h3>Price: <span id="totalPizzaCost"></span><h3>
+                <div id="order-details">
+                <p><a id="pizzaDetails">Pizza Details</a></p>
+                <p id="pizzaDetail">
+                </p>
+                <div class="deliver-pick">
+                  <button type="btn" class="btn btn-primary" id="deliver">Delivery</button>
+                  <ul id="deliveryPrice"></ul>
+
+                  <button type="btn" class="btn btn-primary" id="pickup">Pick up</button>
+                </div><br>
+              </div>
+              <button type="btn" class="btn btn-primary" id="checkout">Checkout</button>
+
+              <h3><span id="check"></span></h3>
             </div>
         </section>
-        <div class="modal-body">
-            <p>
-              Amount you are to pay for your order is ksh
-              <span id="money" style="color: red"></span>
-            </p>
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              id="myModel"
-              data-dismiss="modal"
-            >
-              Confirm checkout
-            </button>
-        </div>
     </body>
 </html>

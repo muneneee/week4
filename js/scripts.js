@@ -1,143 +1,92 @@
+var del = 400;
+var PizzatotalPrice = [];
+function Order (size, crust) {
+ this.size = size;
+ this.crust = crust;
+ this.Topping1 = 50;
+ this.Topping2 = 50;
+ this.pizzaPrice = 0;
+ this.pizzaNumber  = 1;
+ this.pizzaNumbers = [];
+}
+Order.prototype.pizzaCost = function () {
+ if (this.pizzaSize === "small") {
+   this.pizzaPrice += 500;
+ } else if (this.pizzaSize === "medium") {
+   this.pizzaPrice += 800;
+ } else if (this.pizzaSize === "large") {
+   this.pizzaPrice += 1200;
+ }
+ if (this.crust === "crispy") {
+   this.pizzaPrice += 100;
+ } else if (this.crust === "stuffed") {
+   this.pizzaPrice += 120;
+ } else if (this.crust === "glutenfree") {
+   this.pizzaPrice += 100;
+ }
+ for(var j = 1; j < this.pizzaNumbers.length; j++){
+   pizzaNumber += pizzaNumbers[j];
+     }
+ this.pizzaPrice += this.Topping1;
+ this.pizzaPrice += this.Topping2;
+ this.pizzaPrice *= this.pizzaNumber;
+ //this.pizzaPrice *= this.pizzaNumbers;
+ return this.pizzaPrice;
+}
+Order.prototype.finalCost = function () {
+ var TotalPrice = 0;
+ for (var i = 0; i < PizzatotalPrice.length; i ++) {
+   TotalPrice += PizzatotalPrice[i];
+ }
+ return TotalPrice;
+}
+
+//User interface logic
+
 $(document).ready(function() {
-    function pizza(size, crust) {
-        this.size = size;
-        this.crust = crust;
-        this.toppings = [];
-    }
+  $(".header").height($(window).height());
 
-    function location(name, estate) {
-        this.name = name;
-        this.estate = estate;
-    }
+ $("form#pizzaOrder").submit(function(event) {
+     event.preventDefault();
+   var pizzaSize = $("select#size").val();
+   var crust = $("select#crust").val();
+   var Topping1 = $("select#Topping1").val();
+   var Topping2 = $("select#Topping2").val();
+   var pizzaNumbers = $("input#pizza-number").val();
+   var pizzaDetails = (pizzaNumbers + ", " + pizzaSize + ", " + crust + ", " + Topping1 + ", " + Topping2);
+   var newPizzaOrder = new Order(pizzaSize, crust);
+   newPizzaOrder.pizzaCost();
+   PizzatotalPrice.push(newPizzaOrder.pizzaPrice);
 
-    var sizePrice = {
-        small: 500,
-        medium: 800,
-        large: 1200
-        mega: 1500
-    }
+//$("h4").show(); iipp
 
-    var toppingsPrice =[
-        {
-           pepperoni: {
-               small: 50,
-               medium: 75,
-               large: 100,
-               mega: 125
-           },
-           mushrooms: {
-            small: 50,
-            medium: 75,
-            large: 100,
-            mega: 125
-           },
-           onions: {
-            small: 50,
-            medium: 75,
-            large: 100,
-            mega: 125
-           },
-           sausage: {
-            small: 50,
-            medium: 75,
-            large: 100,
-            mega: 125
-           },
-           cheese: {
-            small: 50,
-            medium: 75,
-            large: 100,
-            mega: 125
-           }
-        }
-    ];
-    var crustPrice = {
-        crispy: 100,
-        stuffed: 120,
-        glutenfree: 100
-    };
-
-    function sizecalc(size) {
-        if (size === "small"){
-            return sizePrice.small * 1;
-        }else if(size === "medium") {
-            return sizePrice.medium*1;
-        }else if {size === "large") {
-            return sizePrice.large * 1;
-        } else {
-            return sizePrice.mega * 1;
-        }
-    }
-
-    function crustcalc(crust) {
-        if (crust === "crispy"){
-            return crustPrice.crispy * 1;
-        }else if(crust === "stuffed") {
-            return crustPrice.stuffed * 1;
-        } else {
-            return crustPrice.glutenfree * 1;
-        }
-
-    function toppingscalc(toppings) {
-       var noOfTopping = 0;
-       for (i = 0; i < toppings.length; i++ ){
-            if(toppings[i] == "pepperoni"){
-                noOfTopping += 50;
-            }
-            if (toppings[i] == "mushrooms"){
-                noOfTopping += 50;
-            }
-            if (toppings[i] == "onions"){
-                noOfTopping += 50;
-            }
-            if (toppings[i] == "sausage"){
-                noOfTopping += 50;
-            }
-            if (toppings[i] == "cheese"){
-                noOfTopping += 50;
-            }
-        }
-       return noOfTopping * 1;
-    }
-
-    function checkPepperoni(topping){
-        return topping === "pepperoni";
-    }
-
-    function getPizzaSize(){
-        return $("#size")
-            .find(":selected")
-            .val()
-    }
-
-    function getCrust() {
-        return $("#crust")
-            .find(":selected")
-            .val()
-    }
-
-    function getToppings() {
-        var toppingList = [];
-        $(".toppings :checked").each(function() {
-            toppingList.push($(this).val());
-        });
-        return toppingList;
-    }
-
-    $("form#myform").submit(function(event){
-        event.preventDefault();
-        var pizzaSize = getPizzaSize();
-        var crust = getCrust();
-        var toppingList = getToppings();
-
-        var newPizza = new pizza(pizzaSize, crust);
-        newPizza.toppings.push(toppingList);
-        var oneOrder =
-            sizecalc(pizzaSize)+
-            crustcalc(crust)+
-            toppingscalc(toppingList);
-           
-        
-    })
-
+   $("#pizzaDetails").show();
+   $("#totalPizzaCost").text(newPizzaOrder.finalCost());
+   $("#pizzaDetail").append("<p>" + pizzaDetails + "</p>");
+   $("#size, #crust, #Topping1, #Topping2, #pizza-number").val("");
+ });
+ $("#pizzaDetails").click(function() {
+   $("#pizzaDetail").toggle();
+   $("#deliver").toggle();
+   $("#pickup").toggle();
+   $("#checkout").hide();
+ });
+$("button#deliver").click(function(event){
+   event.preventDefault();
+   alert("Delivery cost is" + " " + del);
+   var location = prompt("Enter your address:");
+   alert("We will deliver your order at" + " " + location);
+   $("#checkout").show();
+})
+$("button#pickup").click(function(event){
+   event.preventDefault();
+   alert("Thank you for shopping with us!!!!!");
+   $("#checkout").show();
+})
+$("button#checkout").click(function(event){
+   event.preventDefault();
+   var check = TotalPrice + del;
+   $("#check").text(check);
+   // console.log(check);
 });
+})
