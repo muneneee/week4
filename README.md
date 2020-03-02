@@ -25,4 +25,4 @@ call 0737785297
 
 ## License
 - [![GitHub license](https://img.shields.io/github/license/Naereen/StrapDown.js.svg)](https://github.com/Naereen/StrapDown.js/blob/master/LICENSE)
-copyright &copy; 2019 Kevin Munene
+copyright ; 2020 Kevin Munene
